@@ -1,0 +1,17 @@
+# Build outputs
+build/
+app/build/
+.gradle/
+local.properties
+
+# Android Studio
+*.iml
+.idea/
+.DS_Store
+
+# Keystore (never commit this)
+*.jks
+*.keystore
+
+# Google services (optional — remove this line if you want to include it)
+# google-services.json

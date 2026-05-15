@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Yatri-Mitra</string>
+    <string name="app_subtitle">Shared Auto Tracker · Live Simulation</string>
+    <string name="app_icon_emoji">🛺</string>
+    <string name="route_label">ROUTE — TOWN CENTER TO RAILWAY STATION</string>
+    <string name="your_stop">Your stop:</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_reset">Reset</string>
+    <string name="label_eta">YOUR ETA</string>
+    <string name="label_distance">DISTANCE</string>
+    <string name="label_vehicles">VEHICLES</string>
+    <string name="label_speed">Speed</string>
+    <string name="unit_minutes">minutes</string>
+    <string name="unit_km">km</string>
+    <string name="unit_on_route">on route</string>
+    <string name="placeholder_dash">-</string>
+    <string name="default_time">00:00</string>
+    <string name="default_vehicle_count">3</string>
+    <string name="default_speed">x2</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="2dp"
+    android:paddingEnd="2dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:id="@+id/tvAutoName"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="Auto #1"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"/>
+
+    <!-- Progress track -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="1"
+        android:background="@color/bg_card_deep"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+        <View
+            android:id="@+id/progressBarFill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="20"
+            android:background="#1D9E75"/>
+        <!-- Remaining space -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="80"
+            android:background="#00000000"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvProgressPct"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textSize="11sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="end"/>
+</LinearLayout>

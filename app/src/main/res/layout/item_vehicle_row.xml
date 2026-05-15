@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp">
+
+    <!-- Auto icon + color dot -->
+    <FrameLayout
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="🛺"
+            android:textSize="18sp"
+            android:gravity="center"/>
+        <View
+            android:id="@+id/vehicleColorDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_circle_dot"
+            android:layout_gravity="bottom|end"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvVehicleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto #1"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+        <TextView
+            android:id="@+id/tvVehiclePos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.3 km · 20 km/h"
+            android:textSize="10sp"
+            android:textColor="@color/text_secondary"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvVehicleEta"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:text="5 min"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/bg_eta_badge_dark"/>
+</LinearLayout>

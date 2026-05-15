@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg_page">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingTop="52dp">
+
+            <!-- Hero card -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:gravity="center"
+                android:background="@drawable/bg_card_main"
+                android:padding="20dp" android:layout_marginBottom="16dp">
+
+                <!-- Avatar + camera badge -->
+                <FrameLayout android:layout_width="80dp" android:layout_height="80dp"
+                    android:layout_marginBottom="12dp">
+                    <!-- Background circle -->
+                    <View android:layout_width="80dp" android:layout_height="80dp"
+                        android:background="@drawable/bg_avatar_teal"/>
+                    <!-- Profile photo (hidden until photo is picked) -->
+                    <ImageView android:id="@+id/ivProfileAvatar"
+                        android:layout_width="80dp" android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:clipToOutline="true"
+                        android:background="@drawable/bg_avatar_teal"
+                        android:visibility="gone"/>
+                    <!-- Initial letter (shown when no photo) -->
+                    <TextView android:id="@+id/tvProfileInitial"
+                        android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="U" android:textSize="28sp"
+                        android:textStyle="bold" android:textColor="#1D9E75"/>
+                    <!-- Camera badge -->
+                    <LinearLayout android:id="@+id/btnCameraBadge"
+                        android:layout_width="26dp" android:layout_height="26dp"
+                        android:layout_gravity="bottom|end"
+                        android:background="@drawable/bg_camera_badge"
+                        android:gravity="center" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                            android:src="@drawable/ic_camera"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <TextView android:id="@+id/tvProfileName"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Your Name" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="@color/text_primary" android:layout_marginBottom="4dp"/>
+                <TextView android:id="@+id/tvProfileEmail"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="email@example.com" android:textSize="13sp"
+                    android:textColor="@color/text_secondary" android:layout_marginBottom="10dp"/>
+
+                <!-- Role pill -->
+                <LinearLayout android:id="@+id/tvRolePill"
+                    android:layout_width="wrap_content" android:layout_height="32dp"
+                    android:background="@drawable/bg_icon_chip_teal"
+                    android:gravity="center" android:paddingStart="12dp" android:paddingEnd="12dp"
+                    android:layout_marginBottom="8dp">
+                    <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                        android:src="@drawable/ic_person" android:layout_marginEnd="6dp"/>
+                    <TextView android:id="@+id/tvRoleText"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Passenger" android:textSize="12sp" android:textColor="#1D9E75"/>
+                </LinearLayout>
+
+                <!-- UID chip -->
+                <TextView android:id="@+id/tvUidChip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="UID: ..." android:textSize="11sp"
+                    android:fontFamily="monospace" android:textColor="@color/text_muted"
+                    android:background="@drawable/bg_txn_chip"
+                    android:paddingStart="8dp" android:paddingEnd="8dp"
+                    android:paddingTop="3dp" android:paddingBottom="3dp"/>
+            </LinearLayout>
+
+            <!-- Account section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="ACCOUNT" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card_main"
+                android:layout_marginBottom="16dp">
+                <!-- Edit profile row -->
+                <LinearLayout android:id="@+id/rowEditProfile"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_teal" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_edit"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Edit Profile" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Edit your name" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginStart="58dp"/>
+                <!-- Change password row -->
+                <LinearLayout android:id="@+id/rowChangePassword"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_blue" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_lock"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Change Password" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Update your password" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Safety section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SAFETY" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:id="@+id/rowSafetyContacts"
+                android:layout_width="match_parent" android:layout_height="54dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/bg_card_main"
+                android:paddingStart="14dp" android:paddingEnd="14dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true" android:focusable="true">
+                <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                    android:background="@drawable/bg_icon_chip_teal" android:gravity="center"
+                    android:layout_marginEnd="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_shield"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Safety Contacts" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                    <TextView android:id="@+id/tvSafetyCount"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="0 contacts saved" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+                <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"/>
+            </LinearLayout>
+
+            <!-- Session section -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="SESSION" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:id="@+id/rowSignOut"
+                android:layout_width="match_parent" android:layout_height="54dp"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:background="@drawable/bg_card_main"
+                android:paddingStart="14dp" android:paddingEnd="14dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true" android:focusable="true">
+                <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                    android:background="@drawable/bg_icon_chip_red" android:gravity="center"
+                    android:layout_marginEnd="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_logout"/>
+                </LinearLayout>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Sign Out"
+                    android:textSize="14sp" android:textColor="#D85A30"/>
+                <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                    android:src="@drawable/ic_chevron_right"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 4-item nav -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp"
+        android:orientation="horizontal" android:background="@drawable/bg_4nav_bar"
+        android:gravity="center_vertical">
+        <LinearLayout android:id="@+id/navHome" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_nav_home_inactive" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Home" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navTrack" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <LinearLayout android:layout_width="52dp" android:layout_height="52dp"
+                android:background="@drawable/bg_nav_track_fab" android:gravity="center">
+                <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                    android:src="@drawable/ic_nav_auto"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navHistory" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_history" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="History" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_person" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Profile" android:textSize="9sp" android:textColor="#1D9E75"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

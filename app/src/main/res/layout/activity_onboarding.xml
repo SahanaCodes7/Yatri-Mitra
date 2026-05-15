@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg_page"
+    android:gravity="center">
+
+    <!-- Slide emoji -->
+    <TextView android:id="@+id/tvSlideEmoji"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="🛺" android:textSize="72sp" android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Title -->
+    <TextView android:id="@+id/tvSlideTitle"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Track Your Auto Live"
+        android:textSize="26sp" android:textStyle="bold"
+        android:textColor="@color/text_primary" android:gravity="center"
+        android:paddingStart="32dp" android:paddingEnd="32dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Description -->
+    <TextView android:id="@+id/tvSlideDesc"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="See exactly where shared autos are on the route."
+        android:textSize="15sp" android:textColor="@color/text_secondary"
+        android:gravity="center" android:lineSpacingExtra="4dp"
+        android:paddingStart="40dp" android:paddingEnd="40dp"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Dots -->
+    <LinearLayout android:id="@+id/dotsContainer"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center"
+        android:layout_marginBottom="40dp"/>
+
+    <!-- Next button -->
+    <LinearLayout android:id="@+id/btnNext"
+        android:layout_width="200dp" android:layout_height="48dp"
+        android:orientation="horizontal" android:gravity="center"
+        android:background="@drawable/bg_stop_btn_active"
+        android:layout_marginBottom="16dp">
+        <TextView android:id="@+id/tvBtnNext"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Next →" android:textSize="15sp"
+            android:textStyle="bold" android:textColor="@color/bg_page"/>
+    </LinearLayout>
+
+    <!-- Skip -->
+    <TextView android:id="@+id/tvSkip"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Skip" android:textSize="13sp"
+        android:textColor="@color/text_muted" android:padding="12dp"/>
+
+</LinearLayout>

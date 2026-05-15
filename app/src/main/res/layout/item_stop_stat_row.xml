@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp">
+
+    <View
+        android:id="@+id/stopColorBar"
+        android:layout_width="4dp"
+        android:layout_height="36dp"
+        android:background="#1D9E75"
+        android:layout_marginEnd="12dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvStopName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="School"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+        <TextView
+            android:id="@+id/tvPickups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 pickups"
+            android:textSize="10sp"
+            android:textColor="@color/text_secondary"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStopBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="High"
+        android:textSize="10sp"
+        android:textColor="#1D9E75"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@drawable/bg_tag_green"/>
+</LinearLayout>

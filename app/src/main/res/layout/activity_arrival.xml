@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:gravity="center"
+    android:background="@color/bg_page" android:padding="28dp">
+
+    <!-- Green check icon -->
+    <ImageView android:id="@+id/ivArrivalCheck"
+        android:layout_width="80dp" android:layout_height="80dp"
+        android:src="@drawable/ic_check_circle"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="You've Arrived!" android:textSize="28sp" android:textStyle="bold"
+        android:textColor="#1D9E75" android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView android:id="@+id/tvArrivalDest"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Destination" android:textSize="15sp"
+        android:textColor="@color/text_secondary" android:gravity="center"
+        android:layout_marginBottom="28dp"/>
+
+    <!-- Trip summary card -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="@drawable/bg_summary_card"
+        android:padding="18dp" android:layout_marginBottom="20dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Trip summary"
+            android:textSize="11sp" android:textColor="@color/text_secondary"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Distance" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+            <TextView android:id="@+id/tvArrivalDistance"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="-- km" android:textSize="12sp" android:textColor="@color/text_primary"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Duration" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+            <TextView android:id="@+id/tvArrivalDuration"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="-- min" android:textSize="12sp" android:textColor="@color/text_primary"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="0.5dp"
+            android:background="#2a3a4a" android:layout_marginBottom="8dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Total" android:textSize="14sp" android:textStyle="bold"
+                android:textColor="@color/text_secondary"/>
+            <TextView android:id="@+id/tvArrivalFare"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="₹--" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="#1D9E75"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Proceeding to payment..."
+        android:textSize="12sp" android:textColor="@color/text_muted" android:gravity="center"/>
+
+    <!-- hidden view used for animation trigger -->
+    <TextView android:id="@+id/tvArrivalEmoji"
+        android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone"/>
+
+</LinearLayout>

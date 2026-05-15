@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "844543504828",
+    "project_id": "yatrimitra7",
+    "storage_bucket": "yatrimitra7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844543504828:android:3b4483641e7c772d773bb9",
+        "android_client_info": {
+          "package_name": "com.example.yatrimitra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJFFrYmWQQeewo-k2YMEwZz4Rw9v-xFgY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

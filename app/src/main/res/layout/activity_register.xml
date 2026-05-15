@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_page" android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center"
+        android:padding="28dp" android:paddingTop="60dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🛺" android:textSize="52sp" android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Create Account" android:textSize="28sp" android:textStyle="bold"
+            android:textColor="@color/text_primary" android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Join Yatri-Mitra today" android:textSize="13sp"
+            android:textColor="@color/text_secondary" android:layout_marginBottom="28dp"/>
+
+        <EditText android:id="@+id/etRegName"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Full Name" android:inputType="textPersonName"
+            android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+            android:background="@drawable/bg_dark_card"
+            android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText android:id="@+id/etRegEmail"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:hint="Email address" android:inputType="textEmailAddress"
+            android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+            android:background="@drawable/bg_dark_card"
+            android:paddingStart="16dp" android:paddingEnd="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Password with eye toggle -->
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_marginBottom="8dp">
+            <EditText android:id="@+id/etRegPassword"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:hint="Password (min 6 chars)" android:inputType="textPassword"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+                android:background="@drawable/bg_dark_card"
+                android:paddingStart="16dp" android:paddingEnd="52dp"/>
+            <ImageView android:id="@+id/ivRegPasswordEye"
+                android:layout_width="48dp" android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_eye_closed"
+                android:padding="12dp"
+                android:clickable="true" android:focusable="true"/>
+        </RelativeLayout>
+
+        <TextView android:id="@+id/tvRegError"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="#D85A30" android:textSize="12sp"
+            android:layout_marginBottom="12dp" android:visibility="gone"/>
+
+        <ProgressBar android:id="@+id/regProgress"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:visibility="gone" android:layout_marginBottom="12dp"/>
+
+        <LinearLayout android:id="@+id/btnDoRegister"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:gravity="center" android:background="@drawable/bg_stop_btn_active"
+            android:clickable="true" android:focusable="true" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Create Account" android:textSize="16sp"
+                android:textStyle="bold" android:textColor="@color/bg_page"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tvBackToLogin"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Already have an account? Login"
+            android:textColor="@color/text_secondary" android:textSize="14sp" android:padding="8dp"/>
+    </LinearLayout>
+</ScrollView>

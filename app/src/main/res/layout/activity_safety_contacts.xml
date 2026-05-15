@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg_page">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:paddingStart="18dp"
+            android:paddingEnd="18dp" android:paddingTop="52dp" android:paddingBottom="16dp">
+
+            <TextView android:id="@+id/btnBack"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="← Back" android:textSize="14sp" android:textColor="#1D9E75"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Header row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                    android:src="@drawable/ic_shield"
+                    android:layout_marginEnd="10dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Safety Contacts"
+                    android:textSize="22sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="These contacts will be alerted during emergencies."
+                android:textSize="12sp" android:textColor="@color/text_secondary" android:layout_marginBottom="20dp"/>
+
+            <!-- SOS Banner -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+                android:orientation="horizontal" android:gravity="center"
+                android:background="#B71C1C" android:layout_marginBottom="16dp">
+                <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                    android:src="@drawable/ic_sos"
+                    android:layout_marginEnd="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="SOS — Emergency" android:textSize="16sp"
+                    android:textStyle="bold" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/contactsContainer"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:layout_marginBottom="16dp"/>
+
+            <LinearLayout android:id="@+id/btnAddContact"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:gravity="center" android:background="@drawable/bg_stop_btn_active"
+                android:clickable="true" android:focusable="true">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                    android:src="@drawable/ic_person_add"
+                    android:layout_marginEnd="8dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Add Contact" android:textSize="15sp"
+                    android:textStyle="bold" android:textColor="@color/bg_page"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom nav -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="62dp"
+        android:orientation="horizontal" android:background="@drawable/bg_bottom_nav"
+        android:gravity="center_vertical">
+        <LinearLayout android:id="@+id/navHome" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_nav_home_inactive" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Home" android:textSize="9sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navTrack" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center">
+            <LinearLayout android:layout_width="44dp" android:layout_height="44dp"
+                android:background="@drawable/bg_nav_pill" android:gravity="center">
+                <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                    android:src="@drawable/ic_nav_auto"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navHistory" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_history" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="History" android:textSize="9sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navProfile" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_person" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Profile" android:textSize="9sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navAbout" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_nav_about" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="About" android:textSize="9sp" android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

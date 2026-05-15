@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg_page">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:scrollbars="none">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingTop="52dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="← Back" android:textSize="13sp" android:textColor="#1D9E75"
+                android:layout_marginBottom="16dp" android:id="@+id/btnBack"
+                android:clickable="true" android:focusable="true"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Settings" android:textSize="22sp" android:textStyle="bold"
+                android:textColor="@color/text_primary" android:layout_marginBottom="20dp"/>
+
+            <!-- RIDE & NAVIGATION -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="RIDE &amp; NAVIGATION" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card_main"
+                android:layout_marginBottom="16dp">
+
+                <!-- Driver mode -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_teal" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_local_taxi"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Driver Mode" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Enable GPS sharing &amp; accept rides" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <Switch android:id="@+id/switchDriverMode"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginStart="58dp"/>
+
+                <!-- Favourite stop -->
+                <LinearLayout android:id="@+id/rowFavStop"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_teal" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_place"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Favourite Stop" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:id="@+id/tvFavStopValue"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="None set" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginStart="58dp"/>
+
+                <!-- Simulation speed -->
+                <LinearLayout android:id="@+id/rowSimSpeed"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:paddingTop="10dp" android:paddingBottom="10dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="44dp"
+                        android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                            android:background="@drawable/bg_icon_chip_amber" android:gravity="center"
+                            android:layout_marginEnd="12dp">
+                            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                                android:src="@drawable/ic_speed"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Simulation Speed" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                            <TextView android:id="@+id/tvSpeedValue"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="×1" android:textSize="11sp" android:textColor="#EF9F27"/>
+                        </LinearLayout>
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_chevron_right"/>
+                    </LinearLayout>
+                    <SeekBar android:id="@+id/seekSimSpeed"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:max="4" android:progress="0"
+                        android:progressTint="#1D9E75" android:thumbTint="#1D9E75"
+                        android:layout_marginTop="6dp" android:visibility="gone"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- NOTIFICATIONS & ALERTS -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="NOTIFICATIONS &amp; ALERTS" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card_main"
+                android:layout_marginBottom="16dp">
+
+                <!-- Arrival sounds -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_teal" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_notifications"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Arrival Sounds" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Play sound when auto arrives" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <Switch android:id="@+id/switchArrivalSounds"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginStart="58dp"/>
+
+                <!-- Dark mode -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_blue" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_settings"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Dark Mode" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Switch between light and dark theme" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <Switch android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- PRIVACY & SAFETY -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PRIVACY &amp; SAFETY" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card_main"
+                android:layout_marginBottom="16dp">
+                <LinearLayout android:id="@+id/rowLocationPerms"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_blue" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_location_on"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Location Permissions" android:textSize="14sp" android:textColor="@color/text_primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Always on" android:textSize="11sp" android:textColor="#185FA5"/>
+                    </LinearLayout>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- DATA & STORAGE -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DATA &amp; STORAGE" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="8dp" android:layout_marginStart="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card_main"
+                android:layout_marginBottom="24dp">
+                <LinearLayout android:id="@+id/rowClearCache"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_amber" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_storage"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Clear Cached Data"
+                        android:textSize="14sp" android:textColor="@color/text_primary"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginStart="58dp"/>
+                <LinearLayout android:id="@+id/rowResetApp"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:paddingStart="14dp" android:paddingEnd="14dp"
+                    android:clickable="true" android:focusable="true">
+                    <LinearLayout android:layout_width="32dp" android:layout_height="32dp"
+                        android:background="@drawable/bg_icon_chip_red" android:gravity="center"
+                        android:layout_marginEnd="12dp">
+                        <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                            android:src="@drawable/ic_warning"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Reset App Data"
+                        android:textSize="14sp" android:textColor="#D85A30"/>
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_chevron_right"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 4-item nav -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp"
+        android:orientation="horizontal" android:background="@drawable/bg_4nav_bar"
+        android:gravity="center_vertical">
+        <LinearLayout android:id="@+id/navHome" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_nav_home_inactive" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Home" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navTrack" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <LinearLayout android:layout_width="52dp" android:layout_height="52dp"
+                android:background="@drawable/bg_nav_track_fab" android:gravity="center">
+                <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                    android:src="@drawable/ic_nav_auto"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navHistory" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_history" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="History" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navProfile" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_person" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Profile" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg_page">
+
+    <!-- PHASE 1: Method selection -->
+    <ScrollView android:id="@+id/phase1"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:scrollbars="none" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="18dp" android:paddingTop="52dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Pay Driver" android:textSize="16sp"
+                android:textStyle="bold" android:textColor="@color/text_primary" android:layout_marginBottom="4dp"/>
+            <TextView android:id="@+id/tvPayFare"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="₹--" android:textSize="44sp"
+                android:textStyle="bold" android:textColor="#1D9E75" android:layout_marginBottom="4dp"/>
+            <TextView android:id="@+id/tvPayDest"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Destination" android:textSize="12sp"
+                android:textColor="@color/text_secondary" android:layout_marginBottom="16dp"/>
+
+            <!-- Fare breakdown -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:background="@drawable/bg_card_main"
+                android:padding="14dp" android:layout_marginBottom="12dp">
+                <TextView android:id="@+id/tvBreakdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="-- km × ₹20" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginTop="6dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Tip"
+                        android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    <TextView android:id="@+id/tvTipBreakdown"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹0" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="0.5dp"
+                    android:background="@color/border" android:layout_marginTop="8dp" android:layout_marginBottom="8dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Total"
+                        android:textSize="13sp" android:textStyle="bold" android:textColor="@color/text_secondary"/>
+                    <TextView android:id="@+id/tvTotalFare"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="₹--" android:textSize="14sp"
+                        android:textStyle="bold" android:textColor="#1D9E75"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Driver -->
+            <TextView android:id="@+id/tvPayDriver"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Driver Name" android:textSize="12sp"
+                android:textColor="@color/text_secondary" android:layout_marginBottom="16dp"/>
+
+            <!-- Stars -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="RATE YOUR DRIVER" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="16dp">
+                <ImageView android:id="@+id/star1" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star_border" android:padding="4dp" android:clickable="true" android:focusable="true"/>
+                <ImageView android:id="@+id/star2" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star_border" android:padding="4dp" android:clickable="true" android:focusable="true"/>
+                <ImageView android:id="@+id/star3" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star_border" android:padding="4dp" android:clickable="true" android:focusable="true"/>
+                <ImageView android:id="@+id/star4" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star_border" android:padding="4dp" android:clickable="true" android:focusable="true"/>
+                <ImageView android:id="@+id/star5" android:layout_width="44dp" android:layout_height="44dp"
+                    android:src="@drawable/ic_star_border" android:padding="4dp" android:clickable="true" android:focusable="true"/>
+            </LinearLayout>
+
+            <!-- Payment methods -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PAY VIA" android:textSize="10sp"
+                android:textColor="@color/text_muted" android:letterSpacing="0.08"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="16dp">
+                <LinearLayout android:id="@+id/btnPayCash"
+                    android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1"
+                    android:orientation="vertical" android:gravity="center"
+                    android:background="@drawable/bg_payment_method_selected"
+                    android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_payment" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Cash" android:textSize="11sp" android:textColor="#1D9E75"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/btnPayUPI"
+                    android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1"
+                    android:orientation="vertical" android:gravity="center"
+                    android:background="@drawable/bg_payment_method"
+                    android:layout_marginEnd="6dp" android:clickable="true" android:focusable="true">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_phone" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="UPI" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/btnPayCard"
+                    android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1"
+                    android:orientation="vertical" android:gravity="center"
+                    android:background="@drawable/bg_payment_method"
+                    android:clickable="true" android:focusable="true">
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                        android:src="@drawable/ic_payment" android:layout_marginBottom="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Card" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- UPI input (shown for UPI) -->
+            <EditText android:id="@+id/etUpiId"
+                android:layout_width="match_parent" android:layout_height="52dp"
+                android:hint="Enter UPI ID (e.g. name@upi)"
+                android:textColor="@color/text_primary" android:textColorHint="@color/text_muted"
+                android:background="@drawable/bg_upi_input"
+                android:paddingStart="14dp" android:paddingEnd="14dp"
+                android:visibility="gone" android:layout_marginBottom="12dp"/>
+
+            <Button android:id="@+id/btnPayNow"
+                android:layout_width="match_parent" android:layout_height="54dp"
+                android:text="Pay ₹-- →" android:textAllCaps="false"
+                android:textSize="16sp" android:textStyle="bold"
+                android:textColor="#FFFFFF" android:backgroundTint="#1D9E75"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- PHASE 2: Processing spinner (hidden initially) -->
+    <LinearLayout android:id="@+id/phase2"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center"
+        android:background="@color/bg_page" android:padding="32dp"
+        android:visibility="gone">
+        <ProgressBar android:layout_width="56dp" android:layout_height="56dp"
+            android:indeterminateTint="#1D9E75" android:layout_marginBottom="16dp"/>
+        <TextView android:id="@+id/tvProcessingMsg"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Contacting your UPI app..."
+            android:textSize="15sp" android:textStyle="bold"
+            android:textColor="@color/text_primary" android:gravity="center" android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Do not press back" android:textSize="12sp"
+            android:textColor="@color/text_secondary"/>
+    </LinearLayout>
+
+    <!-- PHASE 3: Success (hidden initially) -->
+    <LinearLayout android:id="@+id/phase3"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center"
+        android:background="@color/bg_page" android:padding="28dp"
+        android:visibility="gone">
+        <LinearLayout android:id="@+id/successCircle"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:background="@drawable/bg_success_circle"
+            android:gravity="center" android:layout_marginBottom="16dp">
+            <ImageView android:layout_width="40dp" android:layout_height="40dp"
+                android:src="@drawable/ic_check_circle"/>
+        </LinearLayout>
+        <TextView android:id="@+id/tvSuccessTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Payment Successful!" android:textSize="22sp"
+            android:textStyle="bold" android:textColor="@color/text_primary"
+            android:gravity="center" android:layout_marginBottom="8dp"/>
+        <TextView android:id="@+id/tvTxnId"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="YM00000000" android:textSize="13sp"
+            android:fontFamily="monospace" android:textColor="@color/text_secondary"
+            android:background="@drawable/bg_txn_chip"
+            android:paddingStart="10dp" android:paddingEnd="10dp"
+            android:paddingTop="4dp" android:paddingBottom="4dp"
+            android:layout_marginBottom="20dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/bg_card_main"
+            android:padding="14dp" android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="6dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Amount" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvSuccessAmount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="₹--" android:textSize="12sp" android:textColor="@color/text_primary"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="6dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Method" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvSuccessMethod"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Cash" android:textSize="12sp" android:textColor="@color/text_primary"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="Driver" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                <TextView android:id="@+id/tvSuccessDriver"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Ramesh Kumar" android:textSize="12sp" android:textColor="@color/text_primary"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:id="@+id/btnBackHome"
+            android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="Back to Home" android:textAllCaps="false"
+            android:textSize="15sp" android:textStyle="bold"
+            android:textColor="#FFFFFF" android:backgroundTint="#1D9E75"/>
+    </LinearLayout>
+</LinearLayout>

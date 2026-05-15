@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/bg_page">
+
+    <!-- PASSENGER HOME -->
+    <LinearLayout android:id="@+id/layoutPassengerHome"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical">
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1" android:scrollbars="none">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- MAP -->
+                <FrameLayout android:layout_width="match_parent" android:layout_height="160dp">
+                    <org.osmdroid.views.MapView android:id="@+id/homeMapView"
+                        android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_gravity="top|start" android:layout_margin="10dp"
+                        android:background="@drawable/bg_card_main"
+                        android:paddingStart="10dp" android:paddingEnd="10dp"
+                        android:paddingTop="6dp" android:paddingBottom="6dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="YatriMitra" android:textSize="13sp"
+                            android:textStyle="bold" android:textColor="@color/text_primary"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/btnSettings"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_gravity="top|end" android:layout_margin="10dp"
+                        android:background="@drawable/bg_card_main"
+                        android:paddingStart="8dp" android:paddingEnd="8dp"
+                        android:paddingTop="6dp" android:paddingBottom="6dp"
+                        android:gravity="center" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                            android:src="@drawable/ic_settings" android:layout_marginEnd="4dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Theme" android:textSize="10sp" android:textColor="#1D9E75"/>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:paddingStart="14dp"
+                    android:paddingEnd="14dp" android:paddingTop="8dp" android:paddingBottom="14dp">
+
+                    <!-- Search bar -->
+                    <LinearLayout android:id="@+id/btnHomeSearch"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:background="@drawable/bg_card_main"
+                        android:gravity="center_vertical"
+                        android:paddingStart="14dp" android:paddingEnd="14dp"
+                        android:layout_marginBottom="10dp"
+                        android:clickable="true" android:focusable="true">
+                        <View android:layout_width="8dp" android:layout_height="8dp"
+                            android:background="@drawable/bg_circle_green"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Search destination..."
+                            android:textColor="@color/text_muted" android:textSize="14sp"/>
+                        <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                            android:src="@drawable/ic_search"/>
+                    </LinearLayout>
+
+                    <!-- Quick chips -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginBottom="10dp">
+                        <LinearLayout android:id="@+id/btnShortcutHome"
+                            android:layout_width="wrap_content" android:layout_height="34dp"
+                            android:background="@drawable/bg_info_pill"
+                            android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp"
+                            android:layout_marginEnd="8dp"
+                            android:clickable="true" android:focusable="true">
+                            <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                                android:src="@drawable/ic_nav_home_inactive" android:layout_marginEnd="5dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Home" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                        <LinearLayout android:id="@+id/btnShortcutWork"
+                            android:layout_width="wrap_content" android:layout_height="34dp"
+                            android:background="@drawable/bg_info_pill"
+                            android:gravity="center" android:paddingStart="10dp" android:paddingEnd="10dp"
+                            android:clickable="true" android:focusable="true">
+                            <ImageView android:layout_width="14dp" android:layout_height="14dp"
+                                android:src="@drawable/ic_person" android:layout_marginEnd="5dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Work" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Book ride button -->
+                    <LinearLayout android:id="@+id/btnQuickBookContainer"
+                        android:layout_width="match_parent" android:layout_height="54dp"
+                        android:gravity="center" android:background="@drawable/bg_stop_btn_active"
+                        android:layout_marginBottom="12dp"
+                        android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                            android:src="@drawable/ic_local_taxi" android:layout_marginEnd="8dp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Book a Ride Now" android:textSize="16sp"
+                            android:textStyle="bold" android:textColor="@color/bg_page"/>
+                    </LinearLayout>
+
+                    <!-- Stats row -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical"
+                            android:gravity="center" android:background="@drawable/bg_card_main"
+                            android:padding="14dp" android:layout_marginEnd="6dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="3" android:textSize="26sp" android:textStyle="bold"
+                                android:textColor="#1D9E75"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Nearby Autos" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:orientation="vertical"
+                            android:gravity="center" android:background="@drawable/bg_card_main"
+                            android:padding="14dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="₹20/km" android:textSize="22sp" android:textStyle="bold"
+                                android:textColor="#EF9F27"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Flat Rate" android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- DRIVER HOME -->
+    <LinearLayout android:id="@+id/layoutDriverHome"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Driver map -->
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1">
+            <org.osmdroid.views.MapView android:id="@+id/driverHomeMapView"
+                android:layout_width="match_parent" android:layout_height="match_parent"/>
+        </FrameLayout>
+
+        <!-- Driver bottom panel -->
+        <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:scrollbars="none" android:background="@color/bg_page">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="14dp">
+
+                <!-- Online/Offline toggle -->
+                <LinearLayout android:id="@+id/driverStatusCard"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/bg_driver_home_offline"
+                    android:padding="14dp" android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+                    <Switch android:id="@+id/switchDriverOnline"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:id="@+id/tvDriverOnlineStatus"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="You are Offline"
+                            android:textSize="14sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                        <TextView android:id="@+id/tvDriverOnlineSubtitle"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Toggle to start accepting rides"
+                            android:textSize="11sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Driver stats row -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="10dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:gravity="center" android:background="@drawable/bg_card_main"
+                        android:padding="12dp" android:layout_marginEnd="6dp">
+                        <TextView android:id="@+id/tvDriverTrips"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textSize="22sp" android:textStyle="bold"
+                            android:textColor="#1D9E75"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Trips" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:gravity="center" android:background="@drawable/bg_card_main"
+                        android:padding="12dp" android:layout_marginEnd="6dp">
+                        <TextView android:id="@+id/tvDriverEarnings"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="₹0" android:textSize="22sp" android:textStyle="bold"
+                            android:textColor="#EF9F27"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Earnings" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:gravity="center" android:background="@drawable/bg_card_main"
+                        android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="4.8★" android:textSize="22sp" android:textStyle="bold"
+                            android:textColor="#EF9F27"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Rating" android:textSize="10sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Mock ride request sheet (hidden initially) -->
+        <LinearLayout android:id="@+id/rideRequestSheet"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/bg_driver_request_sheet"
+            android:padding="16dp" android:visibility="gone">
+
+            <ProgressBar android:id="@+id/rideRequestTimer"
+                android:layout_width="match_parent" android:layout_height="4dp"
+                android:max="15" android:progress="15"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:progressTint="#EF9F27"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="New Ride Request" android:textSize="15sp"
+                        android:textStyle="bold" android:textColor="@color/text_primary"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Passenger: Sahana" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                </LinearLayout>
+                <TextView android:id="@+id/tvCountdown"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="15s" android:textSize="16sp" android:textStyle="bold"
+                    android:textColor="#EF9F27"/>
+            </LinearLayout>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="📍 MG Road, Stop 4  →  Indiranagar"
+                android:textSize="12sp" android:textColor="@color/text_primary" android:layout_marginBottom="4dp"/>
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Fare: ₹80 + ₹20 tip  ·  0.8 km away"
+                android:textSize="12sp" android:textColor="#1D9E75"
+                android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button android:id="@+id/btnDeclineRide"
+                    android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1"
+                    android:text="Decline" android:textAllCaps="false" android:textSize="14sp"
+                    android:backgroundTint="#4A1B0C" android:textColor="#D85A30"
+                    android:layout_marginEnd="8dp"/>
+                <Button android:id="@+id/btnAcceptRide"
+                    android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="2"
+                    android:text="Accept Ride" android:textAllCaps="false"
+                    android:textSize="14sp" android:textStyle="bold"
+                    android:backgroundTint="#1D9E75" android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 4-item bottom nav -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp"
+        android:orientation="horizontal" android:background="@drawable/bg_4nav_bar"
+        android:gravity="center_vertical">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent"
+            android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_nav_home" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Home" android:textSize="9sp" android:textColor="#1D9E75"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navTrack" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <LinearLayout android:layout_width="52dp" android:layout_height="52dp"
+                android:background="@drawable/bg_nav_track_fab" android:gravity="center">
+                <ImageView android:layout_width="26dp" android:layout_height="26dp"
+                    android:src="@drawable/ic_nav_auto"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navHistory" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_history" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="History" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navProfile" android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1"
+            android:orientation="vertical" android:gravity="center"
+            android:clickable="true" android:focusable="true">
+            <ImageView android:layout_width="22dp" android:layout_height="22dp"
+                android:src="@drawable/ic_person" android:layout_marginBottom="2dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Profile" android:textSize="9sp" android:textColor="@color/text_muted"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
